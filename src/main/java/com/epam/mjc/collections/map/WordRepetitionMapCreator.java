@@ -7,6 +7,9 @@ import java.util.Map;
 public class WordRepetitionMapCreator {
     public Map<String, Integer> createWordRepetitionMap(String sentence) {
         Map<String,Integer> result = new HashMap<>();
+        if (sentence.isEmpty()) {
+            return result;
+        }
         String [] temp = sentence.toLowerCase().split("[ ,.!-]+");
         Arrays.sort(temp);
         for (String word : temp) {
